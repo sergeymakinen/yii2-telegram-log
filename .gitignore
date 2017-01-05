@@ -1,0 +1,3 @@
+/tests/runtime
+/tests/*-local.php
+/vendor

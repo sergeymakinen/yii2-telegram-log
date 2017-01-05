@@ -1,0 +1,38 @@
+{
+    "name": "sergeymakinen/yii2-telegram-log",
+    "homepage": "https://github.com/sergeymakinen/yii2-telegram-log",
+    "description": "Telegram log target for Yii 2",
+    "keywords": ["yii2-telegram-log", "yii2", "yii", "telegram", "log", "logging"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/sergeymakinen/yii2-telegram-log/issues",
+        "source": "https://github.com/sergeymakinen/yii2-telegram-log"
+    },
+    "authors": [
+        {
+            "name": "Sergey Makinen",
+            "email": "sergey@makinen.ru",
+            "homepage": "https://makinen.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0.2",
+        "yiisoft/yii2-httpclient": "~2.0.0",
+        "sergeymakinen/yii2-log-message": "^1.0"
+    },
+    "require-dev": {
+        "sergeymakinen/yii2-tests": "^1.1"
+    },
+    "autoload": {
+        "classmap": [
+            "src/TelegramTarget.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "sergeymakinen\\tests\\telegramlog\\": "tests"
+        }
+    }
+}

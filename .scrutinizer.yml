@@ -1,0 +1,18 @@
+build:
+    environment:
+        php:
+            version: 5.6
+    dependencies:
+        before:
+            - composer config -g repositories.asset-packagist composer https://asset-packagist.org
+imports:
+    - php
+tools:
+    external_code_coverage: true
+    php_cpd: false
+    php_sim: false
+filter:
+    excluded_paths:
+        - docs/*
+        - tests/*
+        - vendor/*
