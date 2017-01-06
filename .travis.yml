@@ -1,42 +1,66 @@
 sudo: false
 git:
-    depth: 1
+  depth: 1
 language: php
-php:
-    - 5.4
-    - 5.5
-    - 7.0
-    - 7.1
 matrix:
-    include:
-        - php: 5.6
-          env:
-              - PHPUNIT_COVERAGE="--coverage-clover=coverage.xml"
+  fast_finish: true
+  include:
+  - php: 5.4
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: 5.4
+  - php: 5.5
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: 5.5
+  - php: 5.6
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: 5.6
+    env: PHPUNIT_COVERAGE="--coverage-clover=coverage.xml"
+  - php: 7.0
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: 7.0
+  - php: 7.1
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: 7.1
+  - php: nightly
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: nightly
+  allow_failures:
+  - php: nightly
+    env: COMPOSER_LOWEST="--prefer-lowest"
+  - php: nightly
 cache:
-    directories:
-        - vendor
+  directories:
+  - "$HOME/.composer/cache"
 before_install:
-    - stty cols 120
-    - |
-      if [ -z "$PHPUNIT_COVERAGE" ]; then
-          phpenv config-rm xdebug.ini
-      fi
+- stty cols 120
+- |
+  if [ -z "$PHPUNIT_COVERAGE" ]; then
+      phpenv config-rm xdebug.ini || true
+  fi
 install:
-    - composer self-update
-    - composer config -g repositories.asset-packagist composer https://asset-packagist.org
-    - travis_retry composer update --no-interaction --prefer-stable --prefer-dist
-    - composer show
+- composer self-update
+- composer config -g repositories.asset-packagist composer https://asset-packagist.org
+- travis_retry composer update --no-interaction --prefer-stable --prefer-dist $COMPOSER_LOWEST
+- composer show
 script:
-    - vendor/bin/phpunit $PHPUNIT_COVERAGE
+- vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_success:
-    - |
-      if [ -n "$PHPUNIT_COVERAGE" ]; then
-          travis_retry wget https://codecov.io/bash
-          bash ./bash
-      fi
+- |
+  if [ -n "$PHPUNIT_COVERAGE" ]; then
+      travis_retry wget https://codecov.io/bash
+      bash ./bash
+  fi
 after_script:
-    - |
-      if [ -n "$PHPUNIT_COVERAGE" ]; then
-          travis_retry wget https://scrutinizer-ci.com/ocular.phar
-          php ocular.phar code-coverage:upload --format=php-clover coverage.xml
-      fi
+- |
+  if [ -n "$PHPUNIT_COVERAGE" ]; then
+      travis_retry wget https://scrutinizer-ci.com/ocular.phar
+      php ocular.phar code-coverage:upload --format=php-clover coverage.xml
+  fi
+notifications:
+  slack:
+    on_start: always
+    on_success: always
+    on_failure: always
+    on_pull_requests: false
+    rooms:
+      secure: AX9Shxw6/LoxKz9AO/6evvvEKoK+n6ITIUsUqH/oHmCFgTUv4mfmYtDn8sV5gVAQHRAqy10U+uyuAICl4qghKnLHWPqlfmZkxcuJO5odYlqs2pFQA61NiQprmBYDveX6irlpKD8xWS+8HrtluURFzCTnvnRh/raCTDRnapvow+0zvpR2x3Cek50H/sb2FGRUmoWwjY0zxhqzLzfv5Kcjx/BV4XPUE7D+bjUog4jcBqWe0FpQcWkSEy6d6HSmUj+y31ZAGNDgyteD89yKpvajkR7akXGcdIkg704n2S3dlLmvA4O+ePuUMqUrR0JFba/H/G6LS20OpKrl67ShGHJUou8MwJpSrkpZQsintNxkBh6WB3Mc+avzoEYgHZEBW7iS6sdN8STu0LvLasnkD4z3L4KpZx8xXKeHfw6ssMsx4qNoeNuB/+A26yFQGcFNUf+9pVfWhyIUopgRl2KxHPC7Ia+oC9mf67gKCOkhE3LMl4I3nRq7Gyo5LVk4UA5S5y6RWl6SoYiVvCgKOZhAlSNwpwAmvsZ5FB3Z8L0jrm+RLIqC1iaiW0oM6MjZKLYgaSxVlZ31Np9mV4X4EbnzPxveeYySVt70hFqDGMUHoCs70ghIRXcg+PtoQ7w2rW/0bifY6ZlAezOUInki6kwruwMkbuDLvk3xzKq1S6njPIKdB9Q=
