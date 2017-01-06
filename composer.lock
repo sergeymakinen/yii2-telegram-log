@@ -186,16 +186,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sergeymakinen/yii2-log-message.git",
-                "reference": "07ee05bb2b3eff2392cc4661f78379997f93bc9b"
+                "reference": "4467e409d540c41dae7116c0d306684ae780e2a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sergeymakinen/yii2-log-message/zipball/07ee05bb2b3eff2392cc4661f78379997f93bc9b",
-                "reference": "07ee05bb2b3eff2392cc4661f78379997f93bc9b",
+                "url": "https://api.github.com/repos/sergeymakinen/yii2-log-message/zipball/4467e409d540c41dae7116c0d306684ae780e2a7",
+                "reference": "4467e409d540c41dae7116c0d306684ae780e2a7",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0.2"
+                "yiisoft/yii2": "~2.0.3"
             },
             "require-dev": {
                 "sergeymakinen/yii2-tests": "^1.0"
@@ -227,7 +227,7 @@
                 "yii2",
                 "yii2-log-message"
             ],
-            "time": "2017-01-04T05:35:59+00:00"
+            "time": "2017-01-06T21:24:53+00:00"
         },
         {
             "name": "yiisoft/yii2",
