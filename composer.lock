@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "40405facb976b4e58393279f4f1a1e1e",
+    "content-hash": "b58454480b36309c6a618f894bdd210c",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -138,20 +138,23 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.8.0",
+            "version": "v4.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2"
+                "reference": "a1c09b09e398687deeb8e309a6305def4b43439b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
-                "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/a1c09b09e398687deeb8e309a6305def4b43439b",
+                "reference": "a1c09b09e398687deeb8e309a6305def4b43439b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -178,33 +181,33 @@
             "keywords": [
                 "html"
             ],
-            "time": "2016-07-16T12:58:58+00:00"
+            "time": "2017-01-13T12:31:37+00:00"
         },
         {
             "name": "sergeymakinen/yii2-log-message",
-            "version": "v1.0.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sergeymakinen/yii2-log-message.git",
-                "reference": "4467e409d540c41dae7116c0d306684ae780e2a7"
+                "reference": "3bd6d7e2b94ebbbbd67451d1fb66ca59c2aadf2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sergeymakinen/yii2-log-message/zipball/4467e409d540c41dae7116c0d306684ae780e2a7",
-                "reference": "4467e409d540c41dae7116c0d306684ae780e2a7",
+                "url": "https://api.github.com/repos/sergeymakinen/yii2-log-message/zipball/3bd6d7e2b94ebbbbd67451d1fb66ca59c2aadf2c",
+                "reference": "3bd6d7e2b94ebbbbd67451d1fb66ca59c2aadf2c",
                 "shasum": ""
             },
             "require": {
                 "yiisoft/yii2": "~2.0.3"
             },
             "require-dev": {
-                "sergeymakinen/yii2-tests": "^1.0"
+                "sergeymakinen/yii2-tests": "^2.0"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/Message.php"
-                ]
+                "psr-4": {
+                    "sergeymakinen\\yii\\logmessage\\": "src"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -227,7 +230,7 @@
                 "yii2",
                 "yii2-log-message"
             ],
-            "time": "2017-01-06T21:24:53+00:00"
+            "time": "2017-01-25T17:30:06+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -478,16 +481,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.5",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108"
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/399c1f9781e222f6eb6cc238796f5200d1b7f108",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
                 "shasum": ""
             },
             "require": {
@@ -516,7 +519,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-10-31T17:19:45+00:00"
+            "time": "2017-01-26T22:05:40+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -729,16 +732,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
                 "shasum": ""
             },
             "require": {
@@ -788,7 +791,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-20T15:22:42+00:00"
+            "time": "2017-01-20T15:06:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -973,16 +976,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.5",
+            "version": "5.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe"
+                "reference": "bee7755d964f8e56d6ecb79046480fd0320b686d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/50fd2be8f3e23e91da825f36f08e5f9633076ffe",
-                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bee7755d964f8e56d6ecb79046480fd0320b686d",
+                "reference": "bee7755d964f8e56d6ecb79046480fd0320b686d",
                 "shasum": ""
             },
             "require": {
@@ -994,7 +997,7 @@
                 "myclabs/deep-copy": "~1.3",
                 "php": "^5.6 || ^7.0",
                 "phpspec/prophecy": "^1.6.2",
-                "phpunit/php-code-coverage": "^4.0.3",
+                "phpunit/php-code-coverage": "^4.0.4",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "^1.0.6",
@@ -1051,7 +1054,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-28T07:18:51+00:00"
+            "time": "2017-01-26T15:28:51+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1626,29 +1629,71 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
-            "name": "sergeymakinen/yii2-tests",
-            "version": "v1.1.0",
+            "name": "sergeymakinen/tests",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sergeymakinen/yii2-tests.git",
-                "reference": "3e405a6fced4aa7cbfcd325a7547e593dcabf9a9"
+                "url": "https://github.com/sergeymakinen/tests.git",
+                "reference": "1a8447c395fac79979059afd06190731146b5ec0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sergeymakinen/yii2-tests/zipball/3e405a6fced4aa7cbfcd325a7547e593dcabf9a9",
-                "reference": "3e405a6fced4aa7cbfcd325a7547e593dcabf9a9",
+                "url": "https://api.github.com/repos/sergeymakinen/tests/zipball/1a8447c395fac79979059afd06190731146b5ec0",
+                "reference": "1a8447c395fac79979059afd06190731146b5ec0",
                 "shasum": ""
             },
             "require": {
-                "phpunit/phpunit": "^4.8 || ^5.6",
-                "symfony/var-dumper": "^2.8 || ^3.2",
+                "phpunit/phpunit": "^4.8 || ^5.2",
+                "symfony/var-dumper": "^2.8 || ^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SergeyMakinen\\Tests\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Makinen",
+                    "email": "sergey@makinen.ru",
+                    "homepage": "https://makinen.ru"
+                }
+            ],
+            "description": "Common tests stuff",
+            "homepage": "https://github.com/sergeymakinen/tests",
+            "keywords": [
+                "test",
+                "tests"
+            ],
+            "time": "2017-01-20T16:36:25+00:00"
+        },
+        {
+            "name": "sergeymakinen/yii2-tests",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sergeymakinen/yii2-tests.git",
+                "reference": "f4b5c9e995747cd02f7d8a09817dde3f65e724c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sergeymakinen/yii2-tests/zipball/f4b5c9e995747cd02f7d8a09817dde3f65e724c6",
+                "reference": "f4b5c9e995747cd02f7d8a09817dde3f65e724c6",
+                "shasum": ""
+            },
+            "require": {
+                "sergeymakinen/tests": "^1.0",
                 "yiisoft/yii2": "~2.0.2"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/TestCase.php"
-                ]
+                "psr-4": {
+                    "sergeymakinen\\yii\\tests\\": "src"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1670,7 +1715,7 @@
                 "yii2",
                 "yii2-tests"
             ],
-            "time": "2017-01-05T14:12:24+00:00"
+            "time": "2017-01-20T16:49:20+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1733,16 +1778,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "f722532b0966e9b6fc631e682143c07b2cf583a0"
+                "reference": "b54b23f9a19b465e76fdaac0f6732410467c83b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f722532b0966e9b6fc631e682143c07b2cf583a0",
-                "reference": "f722532b0966e9b6fc631e682143c07b2cf583a0",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b54b23f9a19b465e76fdaac0f6732410467c83b2",
+                "reference": "b54b23f9a19b465e76fdaac0f6732410467c83b2",
                 "shasum": ""
             },
             "require": {
@@ -1792,20 +1837,20 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-12-11T14:34:22+00:00"
+            "time": "2017-01-03T08:53:57+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "a7095af4b97a0955f85c8989106c249fa649011f"
+                "reference": "50eadbd7926e31842893c957eca362b21592a97d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/a7095af4b97a0955f85c8989106c249fa649011f",
-                "reference": "a7095af4b97a0955f85c8989106c249fa649011f",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/50eadbd7926e31842893c957eca362b21592a97d",
+                "reference": "50eadbd7926e31842893c957eca362b21592a97d",
                 "shasum": ""
             },
             "require": {
@@ -1847,7 +1892,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-10T10:07:06+00:00"
+            "time": "2017-01-03T13:51:32+00:00"
         },
         {
             "name": "webmozart/assert",

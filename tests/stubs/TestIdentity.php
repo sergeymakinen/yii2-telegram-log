@@ -1,11 +1,12 @@
 <?php
 
-namespace sergeymakinen\tests\telegramlog\stubs;
+namespace sergeymakinen\yii\telegramlog\tests\stubs;
 
 use yii\base\InvalidCallException;
+use yii\base\Object;
 use yii\web\IdentityInterface;
 
-class TestIdentity implements IdentityInterface
+class TestIdentity extends Object implements IdentityInterface
 {
     /**
      * @inheritDoc

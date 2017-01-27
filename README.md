@@ -15,13 +15,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "sergeymakinen/yii2-telegram-log:^1.0"
+composer require "sergeymakinen/yii2-telegram-log:^2.0"
 ```
 
 or add
 
 ```json
-"sergeymakinen/yii2-telegram-log": "^1.0"
+"sergeymakinen/yii2-telegram-log": "^2.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -39,7 +39,7 @@ Then set the following Yii 2 configuration parameters:
     'log' => [
         'targets' => [
             [
-                'class' => 'sergeymakinen\log\TelegramTarget',
+                'class' => 'sergeymakinen\yii\telegramlog\Target',
                 'token' => '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11',
                 'chatId' => 123456789,
             ],
@@ -47,3 +47,26 @@ Then set the following Yii 2 configuration parameters:
     ],
 ],
 ```
+
+## Configuration
+
+By default `yii\log\Logger` error levels are mapped to emojis (you can tweak them in the `levelEmojis` property):
+
+| Error level | Emoji
+| --- | ---
+`Logger::LEVEL_ERROR` | ☠️
+`Logger::LEVEL_WARNING` | ⚠️
+`Logger::LEVEL_INFO` | ℹ️
+`Logger::LEVEL_TRACE` | 📝
+
+It's also possible to disable notifications - entirely or per logger level (look at the `enableNotification` property), for example:
+
+```php
+public $enableNotification = [
+    Logger::LEVEL_ERROR => true,
+    Logger::LEVEL_WARNING => false,
+    Logger::LEVEL_INFO => false,
+];
+```
+
+This will disable notifications for warning and info level messages and enable them for other levels (honestly, you can omit the `LEVEL_ERROR` definition here as it's `true` by default).

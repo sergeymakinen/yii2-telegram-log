@@ -1,6 +1,6 @@
 <?php
 
-namespace sergeymakinen\tests\telegramlog\stubs;
+namespace sergeymakinen\yii\telegramlog\tests\stubs;
 
 use yii\web\Controller;
 
