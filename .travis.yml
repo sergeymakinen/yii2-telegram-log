@@ -56,11 +56,3 @@ after_script:
       travis_retry wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.xml
   fi
-notifications:
-  slack:
-    on_start: always
-    on_success: always
-    on_failure: always
-    on_pull_requests: false
-    rooms:
-      secure: AX9Shxw6/LoxKz9AO/6evvvEKoK+n6ITIUsUqH/oHmCFgTUv4mfmYtDn8sV5gVAQHRAqy10U+uyuAICl4qghKnLHWPqlfmZkxcuJO5odYlqs2pFQA61NiQprmBYDveX6irlpKD8xWS+8HrtluURFzCTnvnRh/raCTDRnapvow+0zvpR2x3Cek50H/sb2FGRUmoWwjY0zxhqzLzfv5Kcjx/BV4XPUE7D+bjUog4jcBqWe0FpQcWkSEy6d6HSmUj+y31ZAGNDgyteD89yKpvajkR7akXGcdIkg704n2S3dlLmvA4O+ePuUMqUrR0JFba/H/G6LS20OpKrl67ShGHJUou8MwJpSrkpZQsintNxkBh6WB3Mc+avzoEYgHZEBW7iS6sdN8STu0LvLasnkD4z3L4KpZx8xXKeHfw6ssMsx4qNoeNuB/+A26yFQGcFNUf+9pVfWhyIUopgRl2KxHPC7Ia+oC9mf67gKCOkhE3LMl4I3nRq7Gyo5LVk4UA5S5y6RWl6SoYiVvCgKOZhAlSNwpwAmvsZ5FB3Z8L0jrm+RLIqC1iaiW0oM6MjZKLYgaSxVlZ31Np9mV4X4EbnzPxveeYySVt70hFqDGMUHoCs70ghIRXcg+PtoQ7w2rW/0bifY6ZlAezOUInki6kwruwMkbuDLvk3xzKq1S6njPIKdB9Q=
