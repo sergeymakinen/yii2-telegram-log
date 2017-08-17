@@ -20,6 +20,7 @@
         <ini name="memory_limit" value="-1"/>
         <server name="SCRIPT_NAME" value="/index.php"/>
         <server name="SERVER_NAME" value="example.com"/>
+        <server name="REQUEST_URI" value="/index.php?r=test"/>
         <const name="YII_DEBUG" value="true"/>
         <const name="YII_ENABLE_ERROR_HANDLER" value="false"/>
     </php>
