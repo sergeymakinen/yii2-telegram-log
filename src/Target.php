@@ -75,7 +75,7 @@ class Target extends \yii\log\Target
     /**
      * @var int max character in message text.
      */
-    public $messageMaxLength = 3000;
+    public $substitutionMaxLength = 3000;
 
     /**
      * @inheritDoc
@@ -237,10 +237,11 @@ class Target extends \yii\log\Target
         }
 
         if ($config['wrapAsCode']) {
+            $value = StringHelper::truncate($value, $this->substitutionMaxLength);
             if ($config['short']) {
                 $value = '`' . $value . '`';
             } else {
-                $value = "```text\n" . StringHelper::truncate($value, $this->messageMaxLength) . "\n```";
+                $value = "```text\n" . $value . "\n```";
             }
         }
         if (isset($config['title'])) {
