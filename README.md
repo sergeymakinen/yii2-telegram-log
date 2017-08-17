@@ -30,7 +30,7 @@ to the require section of your `composer.json` file.
 
 First [create a new bot](https://core.telegram.org/bots#6-botfather) and obtain its token. It should look like `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`.
 
-You will also need a [chat ID](https://stackoverflow.com/questions/31078710/how-to-obtain-telegram-chat-id-for-a-specific-user) to send logs to. It should look like `123456789`.
+You will also need a [chat ID](https://stackoverflow.com/questions/31078710/how-to-obtain-telegram-chat-id-for-a-specific-user) to send logs to. You can use the [`@get_id_bot`](https://telegram.me/get_id_bot) bot to obtain it. It should look like `123456789`.
 
 Then set the following Yii 2 configuration parameters:
 
