@@ -12,6 +12,7 @@ namespace sergeymakinen\yii\telegramlog;
 use sergeymakinen\yii\logmessage\Message;
 use yii\base\InvalidValueException;
 use yii\di\Instance;
+use yii\helpers\StringHelper;
 use yii\httpclient\Client;
 use yii\log\Logger;
 
@@ -70,6 +71,11 @@ class Target extends \yii\log\Target
         Logger::LEVEL_INFO => 'ℹ️',
         Logger::LEVEL_TRACE => '📝',
     ];
+
+    /**
+     * @var int max character in message text.
+     */
+    public $substitutionMaxLength = 3000;
 
     /**
      * @inheritDoc
@@ -231,6 +237,7 @@ class Target extends \yii\log\Target
         }
 
         if ($config['wrapAsCode']) {
+            $value = StringHelper::truncate($value, $this->substitutionMaxLength);
             if ($config['short']) {
                 $value = '`' . $value . '`';
             } else {
