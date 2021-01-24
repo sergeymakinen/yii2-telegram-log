@@ -9,10 +9,10 @@
 
 namespace sergeymakinen\yii\telegramlog;
 
+use GuzzleHttp\Client;
 use sergeymakinen\yii\logmessage\Message;
 use yii\base\InvalidValueException;
 use yii\di\Instance;
-use yii\httpclient\Client;
 use yii\log\Logger;
 
 class Target extends \yii\log\Target
@@ -22,7 +22,7 @@ class Target extends \yii\log\Target
      * This can be a component ID, a configuration array or a Client instance.
      */
     public $httpClient = [
-        'class' => 'yii\httpclient\Client',
+        'class' => 'GuzzleHttp\Client',
     ];
 
     /**
@@ -86,7 +86,7 @@ class Target extends \yii\log\Target
     public function init()
     {
         parent::init();
-        $this->httpClient = Instance::ensure($this->httpClient, Client::className());
+        $this->httpClient = Instance::ensure($this->httpClient, Client::class);
         if ($this->substitutions === null) {
             $this->substitutions = $this->defaultSubstitutions();
         }
@@ -99,15 +99,19 @@ class Target extends \yii\log\Target
     public function export()
     {
         foreach (array_map([$this, 'formatMessageRequest'], $this->messages) as $request) {
-            $response = $this->httpClient
-                ->post('https://api.telegram.org/bot' . $this->token . '/sendMessage', $request)
-                ->setFormat(Client::FORMAT_JSON)
-                ->send();
-            if (!$response->getIsOk()) {
-                if (isset($response->getData()['description'])) {
-                    $description = $response->getData()['description'];
+            $response = $this->httpClient->post(
+                'https://api.telegram.org/bot' . $this->token . '/sendMessage',
+                [
+                    'http_errors' => false,
+                    'form_params' => $request,
+                ]
+            );
+            if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
+                $responseBody = json_decode((string) $response->getBody(), true);
+                if (isset($responseBody['description'])) {
+                    $description = $responseBody['description'];
                 } else {
-                    $description = $response->getContent();
+                    $description = (string) $response->getBody();
                 }
                 throw new InvalidValueException(
                     'Unable to send logs to Telegram: ' . $description, (int) $response->getStatusCode()
